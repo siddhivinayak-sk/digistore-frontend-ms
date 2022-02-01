@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  backendServiceUrl: 'http://localhost:80/product'
+  backendServiceUrl: 'http://52.66.205.225:80/product'
 };
