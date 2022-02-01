@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo "BranchName: ${branchName}"
                 echo "Code Update Started"
-                git branch: "${branchName}", url: 'https://github.com/siddhivinayak-sk/node-angular-front-end.git'
+                git branch: "${branchName}", url: 'https://github.com/siddhivinayak-sk/digistore-frontend-ms.git'
                 echo "Code Update End"
             }
         }
@@ -14,7 +14,7 @@ pipeline {
         stage('Status Before Deployment') {
             steps {
                 echo "Undeploying older service"
-                sh(/minikube kubectl -- -n bank-apps get all/)
+                sh(/minikube kubectl -- -n digistore get all/)
                 echo "Undeployed"
             }
         }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo "Undeploying older service"
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh(/minikube kubectl -- -n bank-apps delete -f spring-node-angular-jwt-k8-deployment2.yaml /)
+                    sh(/minikube kubectl -- -n digistore delete -f digistore-frontend-ms-k8-deployment.yaml /)
                 }
                 echo "Undeployed"
             }
@@ -33,7 +33,7 @@ pipeline {
         stage('Deployment') {
             steps {
                 echo "Deployment Started"
-                sh(/minikube kubectl -- -n bank-apps create -f spring-node-angular-jwt-k8-deployment2.yaml/)
+                sh(/minikube kubectl -- -n digistore create -f digistore-frontend-ms-k8-deployment.yaml /)
                 echo "Deployment End"
             }
         }
@@ -41,7 +41,7 @@ pipeline {
         stage('Status') {
             steps {
                 echo "Status Started"
-                sh(/minikube kubectl -- -n bank-apps get all/)
+                sh(/minikube kubectl -- -n digistore get all/)
                 echo "Status End"
             }
         }
