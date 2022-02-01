@@ -62,7 +62,7 @@ status: {}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: spring-boot-jwt-ingress
+  name: digistore-product-ms-ingress
   annotations:
     #kubernetes.io/ingress.class: nginx
 spec:
@@ -97,7 +97,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: digistore-product-ms
+            name: digistore-frontend-ms
             port:
               number: 80
 
