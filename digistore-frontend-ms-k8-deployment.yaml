@@ -90,7 +90,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: spring-boot-jwt
+            name: digistore-product-ms
             port:
               number: 80
       - path: /
