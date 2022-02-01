@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nodeangfe": {
+    "digistorefrontendms": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/nodeangfe",
+            "outputPath": "dist/digistorefrontendms",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "nodeangfe:build:production"
+              "browserTarget": "digistorefrontendms:build:production"
             },
             "development": {
-              "browserTarget": "nodeangfe:build:development"
+              "browserTarget": "digistorefrontendms:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nodeangfe:build"
+            "browserTarget": "digistorefrontendms:build"
           }
         },
         "test": {
@@ -102,5 +102,5 @@
       }
     }
   },
-  "defaultProject": "nodeangfe"
+  "defaultProject": "digistorefrontendms"
 }

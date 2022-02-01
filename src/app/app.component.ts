@@ -13,7 +13,7 @@ import './_content/app.less';
 })
 export class AppComponent {
   currentUser: User;
-  title = 'nodeangfe';
+  title = 'digistorefrontendms';
   
   constructor(
     private router: Router,
