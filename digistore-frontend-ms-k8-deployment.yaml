@@ -67,7 +67,7 @@ metadata:
     #kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: www.digistore.com
+  - host: www.acg-digistore.com
     http:
       paths:
       - path: /product
