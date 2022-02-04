@@ -75,7 +75,9 @@ pipeline {
         stage('Push Image') {
             steps {
                 echo "Push Image Started"
-                sh(/docker push hub.docker.local:5000\/digistore\/digistore-frontend-ms:latest/)
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh(/docker push hub.docker.local:5000\/digistore\/digistore-frontend-ms:latest/)
+                }                
                 echo "Push Image End"
             }
         }
