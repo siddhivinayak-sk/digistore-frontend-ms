@@ -59,7 +59,9 @@ pipeline {
         stage('Scan Image') {
             steps {
                 echo "Scan Image Started"
-                sh(/docker scan --file Dockerfile --json digistore\/digistore-frontend-ms:latest > digistore-frontend-ms_latest.json/)
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh(/docker scan --file Dockerfile --json digistore\/digistore-frontend-ms:latest > digistore-frontend-ms_latest.json/)
+                }                
                 echo "Scan Image End"
             }
         }
