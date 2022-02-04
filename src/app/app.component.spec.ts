@@ -25,7 +25,7 @@ describe('AppComponent', () => {
   it(`should have as title 'DigiStore Application'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('digistorefrontendms');
+    expect(app.title).toEqual('DigiStore Application');
   });
 
   it('should render title', () => {
