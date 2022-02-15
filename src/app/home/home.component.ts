@@ -23,17 +23,6 @@ export class HomeComponent implements OnInit {
         this.getHelloMessage();
         // this.loadAllUsers();
     }
-
-    getHelloMessage(){
-        let head = new HttpHeaders({
-          "Authorization": "Bearer;" + window.sessionStorage.getItem("userToken"),
-          "Access-Control-Allow-Origin": "*"
-        })
-        this.http.get<any>(environment.backendServiceUrl + '/hello').subscribe( respone => {
-            this.welcomMessage = respone;
-        })
-    }
-  
   
     getHelloMessage(){
        let head = new HttpHeaders({
