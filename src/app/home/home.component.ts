@@ -33,6 +33,18 @@ export class HomeComponent implements OnInit {
             this.welcomMessage = respone;
         })
     }
+  
+  
+    getHelloMessage(){
+       let head = new HttpHeaders({
+           "Authorization": "Bearer;" + window.sessionStorage.getItem("userToken"),
+           "Access-Control-Allow-Origin": "*"
+       })
+       this.http.get<string>(environment.backendServiceUrl + '/hello', { responseType: 'text' as 'json'}).subscribe( respone => {
+          this.welcomMessage = respone;
+       })
+    }  
+  
 
     deleteUser(id: number) {
         this.userService.delete(id)
