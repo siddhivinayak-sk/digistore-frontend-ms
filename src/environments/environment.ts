@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  backendServiceUrl: 'http://www.acg-digistore.com:80/product'
+  backendServiceUrl: 'http://product.practice.thecloudbridge.net:80/product'
 };
