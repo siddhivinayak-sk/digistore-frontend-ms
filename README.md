@@ -70,3 +70,7 @@ https://help.sonatype.com/repomanager2/node-packaged-modules-and-npm-registries
 package.json:
 "private": false,
 npm publish --registry http://localhost:8081/repository/mynpmrepo/
+
+## Support This Project
+
+If you find this project useful, consider supporting my open-source work by [buying me a coffee](https://buymeacoffee.com/siddhivinayak.sk). Your support is greatly appreciated! ☕
